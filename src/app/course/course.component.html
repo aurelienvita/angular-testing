@@ -1,0 +1,12 @@
+<p>course works!</p>
+<h1>Test Page </h1>
+<span
+    [ngStyle]="{'color': getColorCompteur()}"
+>
+    {{ compteur }}
+</span>
+<button (click)="incrementCompteur(-1)">-1</button>
+<button (click)="incrementCompteur(1)">+1</button>
+<button (click)="incrementCompteur(5)">-5</button>
+<button (click)="incrementCompteur(5)">+5</button>
+<button (click)="resetCompteur()">Reset le compteur</button>
