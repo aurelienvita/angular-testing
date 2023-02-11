@@ -1,12 +1,57 @@
-<p>course works!</p>
-<h1>Test Page </h1>
-<span
-    [ngStyle]="{'color': getColorCompteur()}"
->
+<div class="bg-gray-300 font-sans px-2 py-3 rounded-2">
+    <h2>1. Faire un compteur</h2>
+
+    <p>
+        Vous ajouterez le code du compteur dans le <code>**course.component**</code>
+    </p>
+    <ul>
+        <li>Il commence à 0</li>
+        <li>On doit pouvoir l'incrémenter de 1 et de 5 (en positif et négatif)</li>
+        <li>De plus, il change de couleur en fonction de sa valeur :
+            <ul>
+                <li>0 : jaune</li>
+                <li>Entre 1 et plus, il sera vert foncé (#009c29)</li>
+                <li>Entre -1 et moins, il sera rouge foncé (#ab000f)</li>
+            </ul>
+        </li>
+    </ul>
+</div>
+<div class="flex justify-center">
+    <span
+        class="bg-violet font-serif fw-700 my-2 px-3 py-1 rounded-2 text-2xl"
+        [ngStyle]="{'color': getColorCompteur()}"
+    >
     {{ compteur }}
 </span>
-<button (click)="incrementCompteur(-1)">-1</button>
-<button (click)="incrementCompteur(1)">+1</button>
-<button (click)="incrementCompteur(5)">-5</button>
-<button (click)="incrementCompteur(5)">+5</button>
-<button (click)="resetCompteur()">Reset le compteur</button>
+</div>
+<div class="flex">
+    <button 
+    class="px-3 py-2 mx-1 rounded-2 cursor-pointer b-none bg-sky-700 color-white fw-700" 
+    (click)="incrementCompteur(-1)">
+    -1
+</button>
+<button 
+    class="px-3 py-2 mx-1 rounded-2 cursor-pointer b-none bg-sky-700 color-white fw-700" 
+    (click)="incrementCompteur(1)"
+>
+    +1
+</button>
+<button 
+    class="px-3 py-2 mx-1 rounded-2 cursor-pointer b-none bg-sky-700 color-white fw-700"
+    (click)="incrementCompteur(5)">
+    -5
+</button>
+<button 
+    class="px-3 py-2 mx-1 rounded-2 cursor-pointer b-none bg-sky-700 color-white fw-700"
+    (click)="incrementCompteur(5)"
+>
+    +5
+</button>
+<button 
+    class="px-3 py-2 mx-1 rounded-2 cursor-pointer b-none bg-sky-700 color-white fw-700"
+    (click)="resetCompteur()"
+>
+    Reset le compteur
+</button>
+</div>
+
