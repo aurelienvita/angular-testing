@@ -1,0 +1,64 @@
+<div class="bg-#161b22 border-color-#30363d border-2 font-sans px-2 py-3 rounded-2">
+    <h2>2. Yahtzee</h2>
+    <p>Faire un Yahtzee, mais qu'est-ce que c'est ? https://fr.wikipedia.org/wiki/Yahtzee</p>
+    <h3>2.1. Yahtzee - Créer les classes métiers</h3>
+    <p>Créer une classe "Dice" :</p>
+    <ul>
+        <li>attributs :</li>
+        <ul>
+            <li>value: number = 1</li>
+            <li>image: string = ''</li>
+        </ul>
+        <li>constructor :</li>
+        <ul>
+            <li>Déterminez une valeur aléatoire entre 1 et 6, et affecter le résultat à l'attribut "value"</li>
+            <li>on génèrera ensuite son image => une string du chemin de l'image à sélectionner : "assets/dices/value.png"</li>
+        </ul>
+    </ul>
+    <p>Créer une classe Yatzee : </p>
+    <ul>
+        <li>attributs :</li>
+        <ul>
+            <li>dices: Dice[] = []</li>
+        </ul>
+        <li>méthodes :</li>
+        <ul>
+            <li>start =></li>
+            <ul>
+                <li>rempli le tableau de dés du Yahtzee, pour cela vous génèrerez 5 instances de la classe Dice</li>
+            </ul>
+        </ul>
+    </ul>
+    <h3>2.2. Yahtzee - Afficher le Yahtzee</h3>
+    <p>
+        Créer un component "yahtzee".<br>
+        Dans le yahtzee.component ajouter à la classe un attribut Yahtzee et instanciez le.<br>
+        Dans l'HTML du component faire :
+    </p>
+    <ul>
+        <li>un bouton qui appelera la méthode "start" de notre Yatzee</li>
+        <li>et si le tableau de dé du Yatzee n'est pas vide, alors on affichera les 5 images des dés dans l'HTML</li>
+    </ul>
+</div>
+
+<div class="flex justify-center my-4">
+    <button 
+        class="px-3 py-2 mx-1 rounded-2 cursor-pointer b-none bg-sky-700 color-white fw-700" 
+        (click)="yahtzee.start()">
+    Démarrer le Yahtzee
+    </button>
+</div>
+
+<ng-template [ngIf]="yahtzee.dices.length > 0">
+    <div class="flex justify-center">
+        <p class="font-sans text-2xl">Total: <span class="fw-700">{{ yahtzee.getSumDices() }}</span></p>
+    </div>
+    <div class="flex justify-center">
+        <div *ngFor="let dice of yahtzee.dices" class="mx-2">
+            <img [src]="dice.image" />
+        </div>
+    </div>
+</ng-template>
+
+
+
