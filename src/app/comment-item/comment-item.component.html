@@ -1,0 +1,14 @@
+<div 
+            class="flex flex-col bg-#161b22 border-color-#30363d hover:bg-#30363d transition-all border-size-5 border-2 rounded-2 font-sans px-3 py-3 mb-2"
+        >
+        <div class="flex items-center">
+            <div class="relative inline-flex items-center justify-center w-10 h-10 overflow-hidden rounded-full bg-red-700">
+                {{ comment.rank }}
+            </div>
+            <div class="flex flex-col ml-5">
+                <span class="text-xl">{{comment.account.nickname }}</span>
+                <span class="">Publié le {{comment.createdAt | date: 'dd/MM/YYYY' }}</span>    
+            </div>
+        </div>
+            <p>{{comment.content }} </p>
+        </div>
