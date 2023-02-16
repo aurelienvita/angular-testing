@@ -1,0 +1,30 @@
+<h1 class="text-center font-sans">Steamich</h1>
+<app-loading [isLoading]="loading" />
+<div *ngIf="error !== null" class="px-2 py-1 bg-red rounded-2 font-sans color-white">
+    <h2>Erreur</h2>
+    <p>{{ error.message ? error.message : "Une erreur s'est produite" }}</p>
+</div>
+<ng-template [ngIf]="latestGames">
+    <h2 class="font-sans">Latest games</h2>
+    <div class="grid grid-cols-3 gap-8">
+        <div class="px-2" *ngFor="let game of latestGames.items">
+            <app-game-card [game]="game"/>
+        </div>
+    </div>
+</ng-template>
+<ng-template [ngIf]="gamesAsc">
+    <h2 class="font-sans">Games order by name</h2>
+    <div class="grid grid-cols-3 gap-8">
+        <div class="px-2" *ngFor="let game of gamesAsc.items">
+            <app-game-card [game]="game"/>
+        </div>
+    </div>
+</ng-template>
+<ng-template [ngIf]="gamesPriceDesc">
+    <h2 class="font-sans">Games order by price</h2>
+    <div class="grid grid-cols-3 gap-8">
+        <div class="px-2" *ngFor="let game of gamesPriceDesc.items">
+            <app-game-card [game]="game"/>
+        </div>
+    </div>
+</ng-template>

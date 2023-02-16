@@ -1,0 +1,18 @@
+<a [routerLink]="['/game', game.slug]" class="decoration-none">
+    <div class="relative  hover-scale-105% transition-all ">
+        <img 
+            class="block w-100% h-400px object-cover cursor-pointer filter-grayscale hover:filter-none"
+            loading="lazy"
+            [src]="game.thumbnailCover"
+            [alt]="game.name" 
+        >
+        <span
+        class="absolute bottom-5 left--2 p-2 bg-orange rounded-1 font-sans color-white"
+        >
+        {{ game.price }} €
+        </span>
+    </div>
+    <h3 class="font-sans text-center">{{ game.name }}</h3>
+</a>
+
+

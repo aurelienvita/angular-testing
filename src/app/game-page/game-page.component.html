@@ -1,0 +1,36 @@
+<h1 class="text-center font-sans">Steamich</h1>
+<app-loading [isLoading]="loading" />
+<div *ngIf="game" class="grid grid-cols-2 gap-4">
+    <div>
+        <img 
+            class="block w-100% h-auto"
+            [src]="game.thumbnailCover" 
+            [alt]="game.name"
+        >
+    </div>
+    <div>
+        <div class="flex-row mb-4">
+            <span
+                *ngFor="let genre of game.genres"
+                class="bg-#161b22 rounded-3 font-sans px-3 mx-1 first:mr-0"
+            >
+                {{ genre.name }}
+            </span>
+        </div>
+        <div class="flex-row mb-4">
+            <img 
+                *ngFor="let country of game.countries" 
+                class="mx-2"
+                [src]="country.urlFlag" 
+                [alt]="country.name"
+            >
+        </div> 
+        <p class="font-sans mb-4">{{ game.description }}</p>
+        <h3>Commentaires</h3>
+        
+        <app-comment-item 
+            *ngFor="let comment of game.comments"
+            [comment]="comment"
+            />
+    </div>
+</div>
