@@ -10,7 +10,9 @@ import { HomeComponent } from './home/home.component';
 import { GameCardComponent } from './game-card/game-card.component';
 import { LoadingComponent } from './loading/loading.component';
 import { GamePageComponent } from './game-page/game-page.component';
-import { CommentItemComponent } from './comment-item/comment-item.component'
+import { CommentItemComponent } from './comment-item/comment-item.component';
+import { MapPageComponent } from './map-page/map-page.component';
+import { LMapComponent } from './lmap/lmap.component'
 
 @NgModule({
   declarations: [
@@ -22,6 +24,8 @@ import { CommentItemComponent } from './comment-item/comment-item.component'
     LoadingComponent,
     GamePageComponent,
     CommentItemComponent,
+    MapPageComponent,
+    LMapComponent,
   ],
   imports: [
     BrowserModule,
