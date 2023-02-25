@@ -1,0 +1,14 @@
+<div class="container mx-auto">
+  <h1 class="font-sans text-2xl text-center mb-5">Test Map</h1>
+  <app-lmap
+    class="block h-300px w-600px mb-5"
+    [position]="[47.7961287,5.570579]"
+    [markers]="[[47.7961287,3.570579], [47.7961287,3.370579], [47.9978628,2.7310072]]"
+  />
+  <app-lmap
+    class="block h-300px w-600px mb-5"
+    [position]="[45.7774551,3.0819427]"
+    [markers]="[[45.7774551,3.0819427]]"
+    [options]="{ zoom: 13 }"
+  />
+</div>
